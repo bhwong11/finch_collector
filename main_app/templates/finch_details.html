@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{%block title%}
+{{finch.name}} details
+{%endblock%}
+{%block content%}
+<h2>{{finch.name}}</h2>
+<img style = 'height:300px'src="{{finch.img}}" alt="{finch.name}">
+<p>This finch is: {{finch.cool}}</p>
+{%if finch.cool%}
+<p>THIS FINCH IS REALLY COOL</p>
+{%else%}
+<p>This is a finch</p>
+{%endif%}
+<p>color: {{finch.color}}</p>
+<a href="{%url 'finch_list'%}">back to all finches</a>
+<a href="{%url 'finch_update' finch.pk%}">update finch</a>
+{%endblock%}

@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%block title%}
+finch_list
+{%endblock%}
+{%block content%}
+<h2>Finch List Page</h2>
+<form>
+<input type="search" name='name' id='search-input'>
+<input type="submit" value='submit'>
+<a href="{%url 'finch_list'%}">clear search</a>
+</form>
+{%for finch in finches%}
+<h3>{{finch.name}}</h3>
+<img style='height:300px' src="{{finch.img}}" alt="{{finch.name}}">
+<a href="{% url 'finch_details' finch.pk%}">link to finch</a>
+{%if not finch.cool%}
+    <p>Is this finch cool? {{finch.cool}}. no they suck</p>
+{%else%}
+    <p>Is this finch cool? {{finch.cool}}. Yes! Good bird</p>
+{%endif%}
+{%empty%}
+<p>No Finchies</p>
+{%endfor%}
+{%endblock%}

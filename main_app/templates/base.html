@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finch Collector - {%block title%}{%endblock%}</title>
+</head>
+<body>
+    <h1>Finches!!</h1>
+    <a href='{% url "home"%}'>Home link</a>
+    <a href="{%url 'finch_list'%}">finch list</a>
+    <a href="{%url 'finch_create'%}">Add Finch</a>
+    <main>
+        <section>
+            {%block content%}
+            {%endblock%}
+        </section>
+        <p>copyright not charles darwin</p>
+    </main>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+{%block title%}
+{{finch.name}} update
+{%endblock%}
+{%block content%}
+<form method='POST'>
+{%csrf_token%}
+{{form.as_p}}
+<input type="submit" value='Submit'>
+</form>
+<a href="{%url 'finch_details' finch.pk %}">back to finch</a>
+{%endblock%}

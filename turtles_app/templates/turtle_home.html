@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+{%block title%}
+turtles page
+{%endblock%}
+{%block content%}
+{%for turtle in turtless%}
+<p>{{turtle}}</p>
+{%empty%}
+<p>No Turtles</p>
+{%endfor%}
+{%endblock%}
