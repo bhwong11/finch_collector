@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{%block title%}
+{{finch.name}}-delete
+{%endblock%}
+{%block content%}
+are you sure you want to delete {{finch.name}}
+<form method="POST">
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Delete">
+</form>
+<a href="{%url 'finch_details' finch.pk%}">back to finch</a>
+{%endblock%}
